@@ -4,6 +4,7 @@ import time
 from datetime import datetime, timedelta
 from shutil import copyfile
 from pymongo import MongoClient
+import sys
 
 
 def time_in_range(start, end, x):
@@ -13,11 +14,13 @@ def time_in_range(start, end, x):
     else:
         return start <= x or x <= end
 
+cam_name = sys.argv[1]
+    
 start = datetime.now() - timedelta(seconds = 5)
 
 client = MongoClient('localhost',27017)
 db = client['WrongWay']
-collection = db[str('DMTV03' + start.strftime("_%Y%m%d_%H"))]
+collection = db[str(cam_name + start.strftime("_%Y%m%d_%H"))]
 
 time.sleep(7)
 
