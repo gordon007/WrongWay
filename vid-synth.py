@@ -25,7 +25,7 @@ collection = db[str(cam_name + start.strftime("_%Y%m%d_%H"))]
 time.sleep(7)
 
 
-orig_directory = os.path.join(os.path.expanduser('~'),'Wrong_Way/images/DMTV03/')
+#orig_directory = os.path.join(os.path.expanduser('~'),'Wrong_Way/images/'+ cam_name +'/')
 directory = os.path.join(os.path.expanduser('~'),'Wrong_Way/video/')
 
 if not os.path.exists(directory):
